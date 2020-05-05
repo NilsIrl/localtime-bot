@@ -1,0 +1,19 @@
+[package]
+name = "discord-localtime"
+version = "0.1.0"
+authors = ["Nils <nils@nilsand.re>"]
+edition = "2018"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[dependencies]
+chrono-tz = "0.5.1"
+chrono = "0.4.11"
+diesel = { version = "1.4.4", features = ["postgres"] }
+serenity = { git = "https://github.com/Lakelezz/serenity.git", branch = "await" }
+tokio = "0.2.20"
+
+[patch.'https://github.com/Lakelezz/serenity.git']
+serenity = { path = "../../serenity" }
